@@ -1,2 +1,3 @@
-# mattpanzer.com
-Personal website hosted at mattpanzer.com
+## mattpanzer.com
+
+My personal website

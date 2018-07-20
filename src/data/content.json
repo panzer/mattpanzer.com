@@ -1,0 +1,102 @@
+{
+  "name": "Matthew Panzer",
+  "nickname": "Matt",
+  "dob": {
+    "string": "May 28, 1998",
+    "day": 28,
+    "month": 5,
+    "year": 1998
+  },
+  "height": "5' 11\"",
+  "hometown": "Hewlett, NY",
+  "occupation": "Computer Engineering Student",
+  "interests": ["70s music", "biking", "mario kart", "Alpha Epsilon Pi"],
+  "skills": [
+    "web development",
+    "user-focused design",
+    "machine learning",
+    "git collaboration",
+    "documentation",
+    "iOS development"
+  ],
+  "links": [
+    {
+      "title": "twitter",
+      "url": "https://twitter.com/MattPanzer100"
+    },
+    {
+      "title": "linkedin",
+      "url": "https://www.linkedin.com/in/panzermatthew/"
+    },
+    {
+      "title": "github",
+      "url": "https://github.com/panzer"
+    }
+  ],
+  "blurb": "",
+  "education": [
+    {
+      "level": "high school",
+      "name": "George W. Hewlett High School",
+      "location": "Hewlett, NY"
+    },
+    {
+      "level": "college",
+      "name": "Northeastern University",
+      "location": "Boston, MA",
+      "major": "Computer Engineering & Computer Science"
+    }
+  ],
+  "projects": [
+    {
+      "name": "Mass Hike",
+      "short_name": "Mass Hike",
+      "url": "masshike.org",
+      "description": "",
+      "media": ["/images/masshike.png"],
+      "tech": ["Javascript", "Node", "React", "Redux Thunk"],
+      "categories": ["collaboration", "front end development"],
+      "start_date": "January 2018",
+      "end_date": "July 2018",
+      "uid": "masshike"
+    },
+    {
+      "name": "Polynomial Regression with ML",
+      "short_name": "Poly ML",
+      "url": "https://github.com/panzer/polynomial-regression",
+      "description": "",
+      "media": ["/images/polyml.png"],
+      "tech": ["Javascript", "Tensorflow.js", "p5.js"],
+      "categories": ["machine learning", "mathematics"],
+      "start_date": "June 2018",
+      "end_date": "June 2018",
+      "uid": "polyml"
+    },
+    {
+      "name": "Hangman in Angular.js",
+      "short_name": "Hangman",
+      "url": "https://github.com/panzer/hangman",
+      "description": "",
+      "media": ["/images/hangman.png"],
+      "tech": ["Javascript", "Angular.js", "Node.js"],
+      "categories": ["web development", "games"],
+      "start_date": "March 2018",
+      "end_date": "April 2018",
+      "uid": "polyml"
+    }
+  ],
+  "work": [
+    {
+      "company": "EPAM Continuum",
+      "title": "Computer Engineer Intern",
+      "start_date": "July 2018",
+      "end_date": "December 2018"
+    },
+    {
+      "company": "Lawrence Woodmere Academy Summer Day",
+      "title": "Computer Specialist",
+      "start_date": "June 2017",
+      "end_date": "August 2017"
+    }
+  ]
+}
