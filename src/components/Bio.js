@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { H1, H2, H3, P, FullScreenSection, MediaQueries } from "../style";
+import { H1, H2, H3, P, A, FullScreenSection, MediaQueries } from "../style";
 import styled from "styled-components";
 
 const Item = P.extend`
@@ -15,8 +15,8 @@ class Bio extends Component {
     const bd = new Date(content.dob.string);
     const age = Math.floor((Date.now() - bd) / (1000 * 60 * 60 * 24 * 365.2));
     return (
-      <Wrapper>
-        <H1>let's start with the basics</H1>
+      <Wrapper id="about">
+        <H1>the basics</H1>
         <Item>
           <b>age: </b>
           {age} years
@@ -45,9 +45,9 @@ class Bio extends Component {
           <b>links: </b>
           {content.links.map(({ title, url }, i) => (
             <span key={i}>
-              <a href={url} target="_blank">
+              <A href={url} target="_blank">
                 {title}
-              </a>{" "}
+              </A>{" "}
             </span>
           ))}
         </Item>

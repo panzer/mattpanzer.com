@@ -2,10 +2,10 @@ import styled from "styled-components";
 import MediaQueries from "./MediaQueries";
 
 const H3 = styled.h3`
-  font-family: "Permanent Marker", cursive;
+  font-family: "Permanent Marker", sans-serif;
   margin: 0;
-  font-size: 40px;
-  line-height: 43px;
+  font-size: 36px;
+  line-height: 38px;
   text-align: center;
   text-transform: uppercase;
 

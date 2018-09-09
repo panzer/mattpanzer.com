@@ -3,10 +3,11 @@ import MediaQueries from "./MediaQueries";
 
 const P = styled.p`
   font-family: "Inconsolata", monospace;
-  font-size: 18px;
+  font-size: 22px;
+  white-space: pre-line;
 
   ${MediaQueries.small} {
-    font-size: 16px;
+    font-size: 18px;
   }
 `;
 

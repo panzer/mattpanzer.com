@@ -4,7 +4,7 @@ import MediaQueries from "./MediaQueries";
 const H2 = styled.h2`
   font-family: "Roboto Slab", serif;
   font-weight: bold;
-  margin-bottom: 20px;
+  margin-bottom: 0px;
   font-size: 54px;
   text-align: ${props => (props.center ? "center" : "left")};
   text-transform: capitalize;

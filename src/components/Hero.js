@@ -31,7 +31,7 @@ class Hero extends Component {
   render() {
     const content = this.props.content;
     return (
-      <Wrapper>
+      <Wrapper id="start">
         <H1>hi, I'm {content.nickname}.</H1>
         <P>scroll to learn more about me</P>
       </Wrapper>

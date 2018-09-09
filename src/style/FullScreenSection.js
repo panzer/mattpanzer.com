@@ -6,7 +6,7 @@ const FullScreenSection = styled.div`
   padding: 0px 15%;
 
   ${MediaQueries.small} {
-    padding: 0px 10%;
+    padding: 0px 7%;
   }
 `;
 
