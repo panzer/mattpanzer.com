@@ -24,7 +24,6 @@ const Wrapper = FullScreenSection.extend`
 const Showcase = styled.div`
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-around;
   margin-bottom: 20px;
 `;
 

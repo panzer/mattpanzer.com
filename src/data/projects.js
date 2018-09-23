@@ -114,7 +114,7 @@ const synth_plant = {
     {
       header: "Outcome",
       text:
-        "Our project was a huge success. A professional procussionist came to demo our project and loved it so much that she featured it on her instagram. One of my favorite parts of the project was making the electronics almost completely invisable. Besides two small probes in the stem of the plant, there were no exposed wires. We accomplished this by embedding the electronics inside a hollow plastic pot, which the actual plant rested inside of. This was a really cool project that tought me how to come up with a creative solution to an open-ended problem."
+        "Our project was a huge success. A professional procussionist came to demo our project and loved it so much that she featured it on her instagram. One of my favorite parts of the project was making the electronics almost completely invisible. Besides two small probes in the stem of the plant, there were no exposed wires. We accomplished this by embedding the electronics inside a hollow plastic pot, which the actual plant rested inside of. This was a really cool project that taught me how to come up with a creative solution to an open-ended problem."
     }
   ],
   media: ["/images/plantsynth.png"],
@@ -135,7 +135,7 @@ const acoustics = {
     {
       header: "Design",
       text:
-        "Using less than $40 worth of material, my four person project team created a simple and unique musical instrument. Our goal was to accomodate the needs of people with Downs syndrome. Due to the syndrome's constraints, our design featured large colorful paddles to play notes on. This project was extremly interesting because it opened my eyes to the importance of designing for the intended user."
+        "Using less than $40 worth of material, my four person project team created a simple and unique musical instrument. Our goal was to accomodate the needs of people with Downs syndrome. Our design featured large colorful paddles to play notes on. This project was extremly interesting because it opened my eyes to the importance of designing for the intended user."
     },
     {
       header: "Technical",
