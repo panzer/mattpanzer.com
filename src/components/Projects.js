@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import { Route } from "react-router-dom";
-import { H1, H2, H3, P, FullScreenSection, MediaQueries } from "../style";
+import { H1, P, A, FullScreenSection, MediaQueries } from "../style";
 import styled from "styled-components";
 
 const Wrapper = FullScreenSection.extend`
+  text-align: center;
+  padding: 0px 10%;
   background-color: #ffd54f;
 
   &:before {
@@ -64,14 +66,15 @@ class Projects extends Component {
         render={({ history }) => (
           <Wrapper id="projects">
             <H1>my projects</H1>
+            <P>click to learn more</P>
             <Showcase>
               {content.projects.map((p, i) => (
                 <Project onClick={() => history.push(`/project/${i}`)} key={i}>
                   {p.media[0] && <Img src={p.media[0]} />}
                   <Title>
-                    <P>
+                    <A>
                       <b>{p.short_name}</b>
-                    </P>
+                    </A>
                   </Title>
                 </Project>
               ))}

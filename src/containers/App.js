@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-import { browserHistory } from "react-router";
 import styled from "styled-components";
-import { H1, H2, H3, P, FullScreenSection, MediaQueries } from "../style";
 import { Hero, Bio, Projects } from "../components";
 import scrollToElement from "scroll-to-element";
 

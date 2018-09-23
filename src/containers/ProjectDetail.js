@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 import { Route } from "react-router-dom";
 import styled from "styled-components";
-import { H1, H2, H3, H4, P, A, MediaQueries } from "../style";
+import { H2, H4, P, A, MediaQueries } from "../style";
 
 import content from "../data/content.js";
 
@@ -30,8 +30,9 @@ const ImgSizer = styled.div`
   margin: 0px 30%;
   margin-bottom: 15px;
   ${MediaQueries.small} {
-    width: 60%;
-    margin: 0px 20%;
+    width: 100%;
+    margin: 0px;
+    margin-bottom: 15px;
   }
 `;
 

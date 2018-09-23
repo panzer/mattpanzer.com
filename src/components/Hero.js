@@ -1,13 +1,15 @@
 import React, { Component } from "react";
 import { H1, P, FullScreenSection } from "../style";
 import styled from "styled-components";
+import P5Wrapper from "react-p5-wrapper";
+import sketch from "../sketch.js";
 
 const Wrapper = FullScreenSection.extend`
   display: flex;
   justify-content: center;
   align-items: center;
   flex-flow: column;
-  background-color: #212121;
+  background-color: rgba(0, 0, 0, 0);
   text-align: center;
   color: white;
 
@@ -27,11 +29,19 @@ const Wrapper = FullScreenSection.extend`
   }
 `;
 
+const P5Positioner = styled.div`
+  position: absolute;
+  z-index: -1;
+`;
+
 class Hero extends Component {
   render() {
     const content = this.props.content;
     return (
-      <Wrapper id="start">
+      <Wrapper id="start" class="canvas-parent">
+        <P5Positioner>
+          <P5Wrapper sketch={sketch} />
+        </P5Positioner>
         <H1>hi, I'm {content.nickname}.</H1>
         <P>scroll to learn more about me</P>
       </Wrapper>

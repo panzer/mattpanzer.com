@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 // import NotFound from "./NotFound";
 import App from "./App";
 import ProjectDetail from "./ProjectDetail";

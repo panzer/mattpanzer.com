@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import { H1, H2, H3, P, A, FullScreenSection, MediaQueries } from "../style";
-import styled from "styled-components";
+import { H1, P, A, FullScreenSection } from "../style";
 
 const Item = P.extend`
   padding-left: 4ch;
@@ -13,7 +12,7 @@ class Bio extends Component {
   render() {
     const content = this.props.content;
     const bd = new Date(content.dob.string);
-    const age = Math.floor((Date.now() - bd) / (1000 * 60 * 60 * 24 * 365.2));
+    const age = ((Date.now() - bd) / (1000 * 60 * 60 * 24 * 365.24)).toFixed(8);
     return (
       <Wrapper id="about">
         <H1>the basics</H1>
@@ -30,8 +29,16 @@ class Bio extends Component {
           {content.hometown}
         </Item>
         <Item>
+          <b>currently in: </b>
+          {content.location}
+        </Item>
+        <Item>
           <b>occupation: </b>
           {content.occupation}
+        </Item>
+        <Item>
+          <b>education: </b>
+          {content.education.map(e => e.name).pop()}
         </Item>
         <Item>
           <b>interests: </b>
@@ -53,6 +60,17 @@ class Bio extends Component {
         </Item>
       </Wrapper>
     );
+  }
+
+  componentDidMount() {
+    this.interval = setInterval(
+      () => this.setState({ time: Date.now() }),
+      1000
+    );
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.interval);
   }
 }
 

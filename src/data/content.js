@@ -11,6 +11,7 @@ export default {
   },
   height: "5' 11\"",
   hometown: "Hewlett, NY",
+  location: "Boston, MA",
   occupation: "Computer Engineering Student",
   interests: ["70s music", "autonomous cars", "mario kart", "Alpha Epsilon Pi"],
   skills: [
