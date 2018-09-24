@@ -7,19 +7,22 @@ export default function sketch(p5) {
   let perlinIn = 0;
   let cX;
   let cY;
+  let customWidth = p5.windowWidth;
+  let customHeight = p5.windowHeight;
+
+  function customCreateCanvas() {
+    p5.createCanvas(customWidth, customHeight);
+    p5.background("#212121");
+  }
 
   p5.setup = () => {
-    p5.createCanvas(p5.windowWidth, p5.windowHeight);
-    p5.background("#212121");
+    customCreateCanvas();
     p5.colorMode(p5.HSB);
     p5.noStroke();
     p5.frameRate(60);
 
-    pos = p5.createVector(p5.random(p5.width), p5.random(p5.height));
+    pos = p5.createVector(p5.random(customWidth), p5.random(customHeight));
     vel = p5.createVector(0, 0);
-
-    cX = p5.width / 2;
-    cY = p5.height / 2;
   };
 
   p5.draw = () => {
@@ -40,16 +43,25 @@ export default function sketch(p5) {
     pos.add(vel);
 
     if (pos.x < 0) {
-      pos.x = p5.width;
+      pos.x = customWidth;
     }
-    if (pos.x > p5.width) {
+    if (pos.x > customWidth) {
       pos.x = 0;
     }
     if (pos.y < 0) {
-      pos.y = p5.height;
+      pos.y = customHeight;
     }
-    if (pos.y > p5.height) {
+    if (pos.y > customHeight) {
       pos.y = 0;
     }
+  };
+
+  p5.myCustomRedrawAccordingToNewPropsHandler = props => {
+    console.log(props.width, props.height);
+    customWidth = props.width;
+    customHeight = props.height;
+    cX = customWidth / 2;
+    cY = customHeight / 2;
+    customCreateCanvas();
   };
 }

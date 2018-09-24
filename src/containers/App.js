@@ -23,6 +23,9 @@ class App extends Component {
       }
     }
   }
+  updateDimensions() {
+    this.setState({ width: window.innerWidth, height: window.innerHeight });
+  }
   componentDidMount() {
     // Decode entities in the URL
     // Sometimes a URL like #/foo#bar will be encoded as #/foo%23bar
@@ -30,15 +33,24 @@ class App extends Component {
     // hash = hash.replace("#", "");
     this.scrollToAnchor();
     window.onhashchange = this.scrollToAnchor;
+    window.addEventListener("resize", () => this.updateDimensions());
   }
+  componentWillUnmount() {
+    window.removeEventListener("resize", () => this.updateDimensions());
+  }
+  componentWillMount() {
+    this.updateDimensions();
+  }
+
   componentDidUpdate() {
     this.scrollToAnchor();
   }
 
   render(props) {
+    const { width, height } = this.state;
     return (
-      <Wrapper>
-        <Hero content={content} />
+      <Wrapper key={width * width * height}>
+        <Hero content={content} width={width} height={height} />
         <Bio content={content} />
         <Projects content={content} />
       </Wrapper>

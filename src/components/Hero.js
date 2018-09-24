@@ -37,10 +37,12 @@ const P5Positioner = styled.div`
 class Hero extends Component {
   render() {
     const content = this.props.content;
+    const { width, height } = this.props;
+    // console.log(width, height);
     return (
       <Wrapper id="start" class="canvas-parent">
         <P5Positioner>
-          <P5Wrapper sketch={sketch} />
+          <P5Wrapper sketch={sketch} width={width} height={height} />
         </P5Positioner>
         <H1>hi, I'm {content.nickname}.</H1>
         <P>scroll to learn more about me</P>
