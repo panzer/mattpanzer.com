@@ -49,8 +49,8 @@ class App extends Component {
   render(props) {
     const { width, height } = this.state;
     return (
-      <Wrapper key={width * width * height}>
-        <Hero content={content} width={width} height={height} />
+      <Wrapper>
+        <Hero content={content} />
         <Bio content={content} />
         <Projects content={content} />
       </Wrapper>

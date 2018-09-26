@@ -13,6 +13,8 @@ export default function sketch(p5) {
   function customCreateCanvas() {
     p5.createCanvas(customWidth, customHeight);
     p5.background("#212121");
+    cX = customWidth / 2;
+    cY = customHeight / 2;
   }
 
   p5.setup = () => {
@@ -60,8 +62,6 @@ export default function sketch(p5) {
   //   console.log(props.width, props.height);
   //   customWidth = props.width;
   //   customHeight = props.height;
-  //   cX = customWidth / 2;
-  //   cY = customHeight / 2;
   //   customCreateCanvas();
   // };
 }
