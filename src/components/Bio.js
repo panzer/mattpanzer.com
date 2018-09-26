@@ -6,7 +6,9 @@ const Item = P.extend`
   text-indent: -4ch;
 `;
 
-const Wrapper = FullScreenSection.extend``;
+const Wrapper = FullScreenSection.extend`
+  background-color: white;
+`;
 
 class Bio extends Component {
   render() {

@@ -56,12 +56,12 @@ export default function sketch(p5) {
     }
   };
 
-  p5.myCustomRedrawAccordingToNewPropsHandler = props => {
-    console.log(props.width, props.height);
-    customWidth = props.width;
-    customHeight = props.height;
-    cX = customWidth / 2;
-    cY = customHeight / 2;
-    customCreateCanvas();
-  };
+  // p5.myCustomRedrawAccordingToNewPropsHandler = props => {
+  //   console.log(props.width, props.height);
+  //   customWidth = props.width;
+  //   customHeight = props.height;
+  //   cX = customWidth / 2;
+  //   cY = customHeight / 2;
+  //   customCreateCanvas();
+  // };
 }

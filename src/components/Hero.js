@@ -30,7 +30,7 @@ const Wrapper = FullScreenSection.extend`
 `;
 
 const P5Positioner = styled.div`
-  position: absolute;
+  position: fixed;
   z-index: -1;
 `;
 
