@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { H1, P, FullScreenSection } from "../style";
+import { H1, P, FullScreenSection, MediaQueries } from "../style";
 import styled from "styled-components";
 import P5Wrapper from "react-p5-wrapper";
 import sketch from "../sketch.js";
@@ -10,6 +10,9 @@ const Wrapper = FullScreenSection.extend`
   align-items: center;
   flex-flow: column;
   background-color: rgba(0, 0, 0, 0);
+  ${MediaQueries.small} {
+    background-color: #212121;
+  }
   text-align: center;
   color: white;
 
@@ -41,7 +44,7 @@ class Hero extends Component {
     // console.log(width, height);
     return (
       <Wrapper id="start" class="canvas-parent">
-        {width > 540 && (
+        {width > 767 && (
           <P5Positioner>
             <P5Wrapper sketch={sketch} width={width} height={height} />
           </P5Positioner>
