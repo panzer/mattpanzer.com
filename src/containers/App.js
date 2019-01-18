@@ -50,7 +50,7 @@ class App extends Component {
     const { width, height } = this.state;
     return (
       <Wrapper>
-        <Hero content={content} />
+        <Hero width={width} height={height} content={content} />
         <Bio content={content} />
         <Projects content={content} />
       </Wrapper>
