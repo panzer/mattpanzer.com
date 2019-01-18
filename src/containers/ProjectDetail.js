@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import { Route } from "react-router-dom";
 import styled from "styled-components";
 import { H2, H4, P, A, MediaQueries } from "../style";
@@ -66,73 +66,78 @@ const Next = A.extend`
   text-align: right;
 `;
 
-const ProjectDetail = ({ match }) => {
-  const project_index = +match.params.i;
-  const project = content.projects[project_index];
-  const len = content.projects.length;
-  const prev_index = project_index - 1;
-  const prev_project = prev_index >= 0 ? content.projects[prev_index] : null;
-  const next_index = project_index + 1;
-  const next_project = next_index < len ? content.projects[next_index] : null;
-  const url = project.url.replace("https://", "");
-  const substring = url.indexOf("/") !== -1 ? url.indexOf("/") : url.length;
-  const imgIndex = project.media.length > 1 ? 1 : 0;
-  return (
-    <Route
-      render={({ history }) => (
-        <Wrapper bg_color={project.color} txt_color={project.text_color}>
-          <Content>
-            <A
-              onClick={() => history.push("/#projects")}
-            >{`<- Back to my projects`}</A>
-            <H2>{project.name}</H2>
+class ProjectDetail extends Component {
+  componentDidMount() {}
 
-            <P>
-              {`${project.start_date} -> ${project.end_date}`}
-              {project.url && ` | `}
-              <A href={project.url} target="_blank">
-                {url.substring(0, substring)}
-              </A>
-            </P>
+  render() {
+    window.scrollTo(0, 0);
+    const project_index = +this.props.match.params.i;
+    const project = content.projects[project_index];
+    const len = content.projects.length;
+    const prev_index = project_index - 1;
+    const prev_project = prev_index >= 0 ? content.projects[prev_index] : null;
+    const next_index = project_index + 1;
+    const next_project = next_index < len ? content.projects[next_index] : null;
+    const url = project.url.replace("https://", "");
+    const substring = url.indexOf("/") !== -1 ? url.indexOf("/") : url.length;
+    const imgIndex = project.media.length > 1 ? 1 : 0;
+    return (
+      <Route
+        render={({ history }) => (
+          <Wrapper bg_color={project.color} txt_color={project.text_color}>
+            <Content>
+              <A
+                onClick={() => history.push("/#projects")}
+              >{`<- Back to my projects`}</A>
+              <H2>{project.name}</H2>
 
-            {project.media[imgIndex] && (
-              <ImgSizer>
-                <Img src={project.media[imgIndex]} />
-              </ImgSizer>
-            )}
+              <P>
+                {`${project.start_date} -> ${project.end_date}`}
+                {project.url && ` | `}
+                <A href={project.url} target="_blank">
+                  {url.substring(0, substring)}
+                </A>
+              </P>
 
-            <div>
-              {project.description.map((section, i) => (
-                <div key={i}>
-                  <H4>{section.header}</H4>
-                  {section.text
-                    .split("\n")
-                    .map((item, i) => <P key={i}>{item}</P>)}
-                </div>
-              ))}
-            </div>
+              {project.media[imgIndex] && (
+                <ImgSizer>
+                  <Img src={project.media[imgIndex]} />
+                </ImgSizer>
+              )}
 
-            <P>
-              <i>{project.tech.join(", ")}</i>
-            </P>
-          </Content>
-          <ButtonSpacer>
-            {prev_project && (
-              <Prev
-                onClick={() => history.push(`/project/${prev_index}`)}
-              >{`<- ${prev_project.short_name}`}</Prev>
-            )}
+              <div>
+                {project.description.map((section, i) => (
+                  <div key={i}>
+                    <H4>{section.header}</H4>
+                    {section.text
+                      .split("\n")
+                      .map((item, i) => <P key={i}>{item}</P>)}
+                  </div>
+                ))}
+              </div>
 
-            {next_project && (
-              <Next onClick={() => history.push(`/project/${next_index}`)}>{`${
-                next_project.short_name
-              } ->`}</Next>
-            )}
-          </ButtonSpacer>
-        </Wrapper>
-      )}
-    />
-  );
-};
+              <P>
+                <i>{project.tech.join(", ")}</i>
+              </P>
+            </Content>
+            <ButtonSpacer>
+              {prev_project && (
+                <Prev
+                  onClick={() => history.push(`/project/${prev_index}`)}
+                >{`<- ${prev_project.short_name}`}</Prev>
+              )}
+
+              {next_project && (
+                <Next
+                  onClick={() => history.push(`/project/${next_index}`)}
+                >{`${next_project.short_name} ->`}</Next>
+              )}
+            </ButtonSpacer>
+          </Wrapper>
+        )}
+      />
+    );
+  }
+}
 
 export default ProjectDetail;
