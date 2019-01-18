@@ -114,7 +114,7 @@ const synth_plant = {
     {
       header: "Outcome",
       text:
-        "Our project was a huge success. A professional procussionist came to demo our project and loved it so much that she featured it on her instagram. One of my favorite parts of the project was making the electronics almost completely invisible. Besides two small probes in the stem of the plant, there were no exposed wires. We accomplished this by embedding the electronics inside a hollow plastic pot, which the actual plant rested inside of. This was a really cool project that taught me how to come up with a creative solution to an open-ended problem."
+        "Our project was a huge success. A professional procussionist came to demo our project and loved it so much that she featured it on her Instagram account. One of my favorite parts of the project was making the electronics almost completely invisible. Besides two small probes in the stem of the plant, there were no exposed wires. We accomplished this by embedding the electronics inside a hollow plastic pot, which the actual plant rested inside of. This was a really cool project that taught me how to come up with a creative solution to an open-ended problem."
     }
   ],
   media: ["/images/plantsynth.png"],
