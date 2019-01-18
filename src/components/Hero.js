@@ -30,7 +30,7 @@ const Wrapper = FullScreenSection.extend`
 `;
 
 const P5Positioner = styled.div`
-  position: fixed;
+  position: absolute;
   z-index: -1;
 `;
 
@@ -41,9 +41,11 @@ class Hero extends Component {
     // console.log(width, height);
     return (
       <Wrapper id="start" class="canvas-parent">
-        <P5Positioner>
-          <P5Wrapper sketch={sketch} width={width} height={height} />
-        </P5Positioner>
+        {width > 540 && (
+          <P5Positioner>
+            <P5Wrapper sketch={sketch} width={width} height={height} />
+          </P5Positioner>
+        )}
         <H1>hi, I'm {content.nickname}.</H1>
         <P>scroll to learn more about me</P>
       </Wrapper>
