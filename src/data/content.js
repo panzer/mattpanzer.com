@@ -25,10 +25,6 @@ export default {
   ],
   links: [
     {
-      title: "twitter",
-      url: "https://twitter.com/MattPanzer100"
-    },
-    {
       title: "linkedin",
       url: "https://www.linkedin.com/in/panzermatthew/"
     },
