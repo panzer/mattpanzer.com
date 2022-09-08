@@ -12,16 +12,17 @@ export default {
   height: "5' 11\"",
   hometown: "Hewlett, NY",
   location: "Boston, MA",
-  occupation: "Computer Engineering Student",
-  interests: ["70s music", "autonomous cars", "mario kart", "Alpha Epsilon Pi"],
+  occupation: "Software Engineer",
+  interests: ["cooking", "70s music", "autonomous cars", "mario kart"],
   skills: [
-    "embedded software",
+    "engineering leadership",
     "web development",
-    "user-focused design",
-    "machine learning",
+    "embedded software",
+    "user-focused engineering",
+    "data science & ML",
     "git collaboration",
-    "documentation",
-    "iOS development"
+    "rock-solid documentation",
+    "mobile development"
   ],
   links: [
     {
@@ -50,16 +51,16 @@ export default {
   projects: projects,
   work: [
     {
+      company: "MORSE Corp.",
+      title: "Software Engineer",
+      start_date: "July 2019",
+      end_date: "Present"
+    },
+    {
       company: "EPAM Continuum",
       title: "Computer Engineer Intern",
       start_date: "July 2018",
       end_date: "December 2018"
     },
-    {
-      company: "Lawrence Woodmere Academy Summer Day",
-      title: "Computer Specialist",
-      start_date: "June 2017",
-      end_date: "August 2017"
-    }
   ]
 };

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import MediaQueries from "./MediaQueries";
 
-const FullScreenSection = styled.div`
+const FullScreenSection = styled.section`
   min-height: 100vh;
   padding: 0px 15%;
 

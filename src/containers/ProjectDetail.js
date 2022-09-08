@@ -1,7 +1,9 @@
-import React, { Component } from "react";
-import { Route } from "react-router-dom";
+import React from "react";
+import { Route, Link, useParams } from "react-router-dom";
 import styled from "styled-components";
-import { H2, H4, P, A, MediaQueries } from "../style";
+import { H2, H4, P, A, ALink, MediaQueries } from "../style";
+import { HashLink } from 'react-router-hash-link';
+
 
 import content from "../data/content.js";
 
@@ -56,22 +58,20 @@ const ButtonSpacer = styled.div`
   }
 `;
 
-const Prev = A.extend`
+const Prev = styled(ALink)`
   grid-area: prev;
   text-align: left;
 `;
 
-const Next = A.extend`
+const Next = styled(ALink)`
   grid-area: next;
   text-align: right;
 `;
 
-class ProjectDetail extends Component {
-  componentDidMount() {}
-
-  render() {
+function ProjectDetail() {
     window.scrollTo(0, 0);
-    const project_index = +this.props.match.params.i;
+    const { i } = useParams();
+    const project_index = parseInt(i);
     const project = content.projects[project_index];
     const len = content.projects.length;
     const prev_index = project_index - 1;
@@ -81,18 +81,19 @@ class ProjectDetail extends Component {
     const url = project.url.replace("https://", "");
     const substring = url.indexOf("/") !== -1 ? url.indexOf("/") : url.length;
     const imgIndex = project.media.length > 1 ? 1 : 0;
+    const datesText = project.start_date !== project.end_date ? `${project.start_date} -> ${project.end_date}` : project.end_date
     return (
-      <Route
-        render={({ history }) => (
           <Wrapper bg_color={project.color} txt_color={project.text_color}>
             <Content>
-              <A
-                onClick={() => history.push("/#projects")}
-              >{`<- Back to my projects`}</A>
+              <ALink
+                to={"/#projects"}
+              >
+                {`<- Back to my projects`}
+              </ALink>
               <H2>{project.name}</H2>
 
               <P>
-                {`${project.start_date} -> ${project.end_date}`}
+                {datesText}
                 {project.url && ` | `}
                 <A href={project.url} target="_blank">
                   {url.substring(0, substring)}
@@ -123,21 +124,18 @@ class ProjectDetail extends Component {
             <ButtonSpacer>
               {prev_project && (
                 <Prev
-                  onClick={() => history.push(`/project/${prev_index}`)}
+                  to={`/project/${prev_index}`}
                 >{`<- ${prev_project.short_name}`}</Prev>
               )}
 
               {next_project && (
                 <Next
-                  onClick={() => history.push(`/project/${next_index}`)}
+                  to={`/project/${next_index}`}
                 >{`${next_project.short_name} ->`}</Next>
               )}
             </ButtonSpacer>
           </Wrapper>
-        )}
-      />
     );
-  }
 }
 
 export default ProjectDetail;

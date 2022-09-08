@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import { H1, P, A, FullScreenSection } from "../style";
+import styled from "styled-components";
 
-const Item = P.extend`
+const Item = styled(P)`
   padding-left: 4ch;
   text-indent: -4ch;
 `;
 
-const Wrapper = FullScreenSection.extend`
+const Wrapper = styled(FullScreenSection)`
   background-color: white;
 `;
 

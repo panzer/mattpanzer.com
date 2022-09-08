@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import { Route } from "react-router-dom";
+import { Route, Routes, Link } from "react-router-dom";
 import { H1, P, A, FullScreenSection, MediaQueries } from "../style";
 import styled from "styled-components";
 
-const Wrapper = FullScreenSection.extend`
+const Wrapper = styled(FullScreenSection)`
   text-align: center;
   padding: 0px 10%;
   background-color: #ffd54f;
@@ -24,10 +24,11 @@ const Wrapper = FullScreenSection.extend`
 const Showcase = styled.div`
   display: flex;
   flex-flow: row wrap;
+  justify-content: center;
   margin-bottom: 20px;
 `;
 
-const Project = styled.div`
+const Project = styled(Link)`
   display: flex;
   cursor: pointer;
   flex-direction: column;
@@ -61,26 +62,20 @@ class Projects extends Component {
   render() {
     const content = this.props.content;
     return (
-      <Route
-        render={({ history }) => (
-          <Wrapper id="projects">
-            <H1>my projects</H1>
-            <P>click to learn more</P>
-            <Showcase>
-              {content.projects.map((p, i) => (
-                <Project onClick={() => history.push(`/project/${i}`)} key={i}>
-                  {p.media[0] && <Img src={p.media[0]} />}
-                  <Title>
-                    <A>
-                      <b>{p.short_name}</b>
-                    </A>
-                  </Title>
-                </Project>
-              ))}
-            </Showcase>
-          </Wrapper>
-        )}
-      />
+        <Wrapper id="projects">
+          <H1>my projects</H1>
+          <P>click to learn more</P>
+          <Showcase>
+            {content.projects.map((p, i) => (
+              <Project to={`/project/${i}`} key={i}>
+                {p.media[0] && <Img src={p.media[0]} />}
+                <Title>
+                  <b>{p.short_name}</b>
+                </Title>
+              </Project>
+            ))}
+          </Showcase>
+        </Wrapper>
     );
   }
 }

@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { H1, P, FullScreenSection, MediaQueries } from "../style";
 import styled from "styled-components";
-import P5Wrapper from "react-p5-wrapper";
+import { ReactP5Wrapper } from "react-p5-wrapper";
 import sketch from "../sketch.js";
 
-const Wrapper = FullScreenSection.extend`
+const Wrapper = styled(FullScreenSection)`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -39,14 +39,13 @@ const P5Positioner = styled.div`
 
 class Hero extends Component {
   render() {
-    const content = this.props.content;
-    const { width, height } = this.props;
+    const { width, height, content } = this.props;
     // console.log(width, height);
     return (
-      <Wrapper id="start" class="canvas-parent">
+      <Wrapper id="start" className="canvas-parent">
         {width > 767 && (
           <P5Positioner>
-            <P5Wrapper sketch={sketch} width={width} height={height} />
+            <ReactP5Wrapper sketch={sketch} width={width} height={height} />
           </P5Positioner>
         )}
         <H1>hi, I'm {content.nickname}.</H1>

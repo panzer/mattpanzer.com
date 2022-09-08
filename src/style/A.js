@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import MediaQueries from "./MediaQueries";
+import { Link } from "react-router-dom"
+import { HashLink } from "react-router-hash-link";
 
 const A = styled.a`
   font-family: "Inconsolata", monospace;
@@ -33,4 +35,7 @@ const A = styled.a`
   }
 `;
 
+const ALink = A.withComponent(HashLink)
+
 export default A;
+export {ALink}

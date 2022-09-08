@@ -14,14 +14,21 @@ const Wrapper = styled.div`
 `;
 
 class App extends Component {
-  scrollToAnchor() {
-    if (this.props) {
-      const el = this.props.history.location.hash;
-      if (el) {
-        console.log(el);
-        scrollToElement(el);
-      }
+  constructor(props) {
+    super(props);
+    this.state = {
+      width: window.innerWidth, height: window.innerHeight
     }
+  }
+
+  scrollToAnchor() {
+    // if (this.props) {
+    //   const el = this.props.history.location.hash;
+    //   if (el) {
+    //     console.log(el);
+    //     scrollToElement(el);
+    //   }
+    // }
   }
   updateDimensions() {
     this.setState({ width: window.innerWidth, height: window.innerHeight });
@@ -37,9 +44,6 @@ class App extends Component {
   }
   componentWillUnmount() {
     window.removeEventListener("resize", () => this.updateDimensions());
-  }
-  componentWillMount() {
-    this.updateDimensions();
   }
 
   componentDidUpdate() {

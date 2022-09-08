@@ -1,7 +1,7 @@
 const mass_hike = {
   name: "Mass Hike",
   short_name: "Mass Hike",
-  url: "https://masshike.org",
+  url: "",
   description: [
     {
       header: "Background",
@@ -24,7 +24,7 @@ const mass_hike = {
         "After just a few months of work, we were able to deploy this beautiful new site. Now it serves Mass Hike's loyal members and helps Boston's community get out into nature!"
     }
   ],
-  media: ["/images/masshike.png", "/images/mh-hero.png"],
+  media: ["/images/masshike.webp", "/images/mh-hero.webp"],
   tech: ["Javascript", "Node", "React", "Redux Thunk"],
   categories: ["collaboration", "front end development"],
   start_date: "January 2018",
@@ -55,7 +55,7 @@ const poly_ml = {
         "This example makes use of the p5.js library for graphics and Tensorflow.js for the machine learning model."
     }
   ],
-  media: ["/images/polyml.png", "/images/polyml-hero.png"],
+  media: ["/images/polyml.webp", "/images/polyml-hero.webp"],
   tech: ["Javascript", "Tensorflow.js", "p5.js"],
   categories: ["machine learning", "mathematics"],
   start_date: "June 2018",
@@ -78,7 +78,7 @@ const hangman = {
     {
       header: "Learning",
       text:
-        "Prior to this project, I had absolutely zero experience with Angular and Node backends. In just a week, I was able to get a fully functional and interactive site working. It was very rewarding to dive headfirst into something completely new."
+        "Prior to this project, I had absolutely zero experience with Angular and Node backends. In just a week, I was able to get a fully functional and interactive site working. It was very rewarding to dive headfirst into something completely new. If I were to continue with this project, I'd focus on separating the frontend and backend logic to follow a Model View Controller architecture."
     },
     {
       header: "Fun Fact",
@@ -86,7 +86,7 @@ const hangman = {
         'The hangman word in the above screenshot is "tightly" which is an extremely difficult word to guess, in my opinion!'
     }
   ],
-  media: ["/images/hangman.png", "/images/hangman-hero.png"],
+  media: ["/images/hangman.webp", "/images/hangman-hero.webp"],
   tech: ["Javascript", "Angular.js", "Node.js"],
   categories: ["web development", "games"],
   start_date: "March 2018",
@@ -117,7 +117,7 @@ const synth_plant = {
         "Our project was a huge success. A professional procussionist came to demo our project and loved it so much that she featured it on her Instagram account. One of my favorite parts of the project was making the electronics almost completely invisible. Besides two small probes in the stem of the plant, there were no exposed wires. We accomplished this by embedding the electronics inside a hollow plastic pot, which the actual plant rested inside of. This was a really cool project that taught me how to come up with a creative solution to an open-ended problem."
     }
   ],
-  media: ["/images/plantsynth.png"],
+  media: ["/images/plantsynth.webp"],
   tech: ["Arduino", "Circuitry", "User Centered Design"],
   categories: ["web development", "games"],
   start_date: "March 2018",
@@ -143,7 +143,7 @@ const acoustics = {
         "This project had a few technical aspects to consider. The sound created by our instrument came from metal hitting copper tubes of various lengths. Calculating the length needed for certain tones required the use of physics formulas and a bit of manual tuning. For creating the frame, we carefully measured and planned our resources as to stay within our budget."
     }
   ],
-  media: ["/images/accoustics.png"],
+  media: ["/images/accoustics.webp"],
   tech: ["User-Centric Design", "Hardware Design", "Physics of Sound"],
   categories: ["web development", "games"],
   start_date: "November 2017",
@@ -174,7 +174,7 @@ const raisin = {
         "There were many technical challenges to overcome while designing this system. Many hardware modules had to be designed from scratch using nothing but AND and OR latches. In addition, MATLAB's Simulink library has a vast array of features which I tried to leverage as much as possible."
     }
   ],
-  media: ["/images/raisin.png"],
+  media: ["/images/raisin.webp"],
   tech: [
     "Circuit Design",
     "Logic Circuits",
@@ -188,4 +188,68 @@ const raisin = {
   uid: "raisin"
 };
 
-export default [mass_hike, poly_ml, hangman, synth_plant, acoustics, raisin];
+const recipes = {
+  name: "Recipe Blog - Static Site Generator & GraphQL",
+  short_name: "Recipe Blog",
+  url: "https://github.com/panzer/takeshape-recipes",
+  description: [
+    {
+      header: "Background",
+      text:
+        "During some part-time work at TakeShape, a modern Content Management System (CMS), I had the opportunity to work on direct website feature in React and TypeScript. I had the opportunity to write a short blog piece (see here https://www.takeshape.io/articles/spicing-it-up-with-a-recipes-site/) and produce a demo site to show off TakeShape's abilities."
+    },
+    {
+      header: "Technologies",
+      text:
+        "The site was build as a staticly generated site using Nunjucks templating language and a GraphQL API generated by TakeShape. Static sites are back in vogue because they offer outstanding load-times and user experiences."
+    },
+    {
+      header: "Learnings",
+      text:
+        "It was awesome to build a project that instantly went out for anyone to see, and especially being able to write so much step-by-step and illustrative documentation. I learned a lot about what information is useful for others to see when viewing a demo, particularly how it is important to keep examples to their minimum working size."
+    }
+  ],
+  media: ["/images/recipes.webp"],
+  tech: [
+    "Static Site",
+    "Nunjucks",
+    "GraphQL"
+  ],
+  categories: ["web development", "food", "blog"],
+  start_date: "August 2019",
+  end_date: "August 2019",
+  color: "#2f4f4f",
+  text_color: "#fff",
+  uid: "recipes"
+};
+
+const jsgame = {
+  name: "Physics Based Mini Games",
+  short_name: "JS Arcade",
+  url: "https://github.com/panzer/js-games",
+  description: [
+    {
+      header: "Introduction",
+      text:
+        "I've worked on this project slowly over time, building upon my knowledge of physics-based simulation to make very simple and unpolished games."
+    },
+    {
+      header: "Technologies",
+      text:
+        "The entire physics engine was built myself on top of p5.js, which handles the vector math and rendering. It's a very lightweight site that just runs the javascript in your browser."
+    }
+  ],
+  media: ["/images/js-game.webp", "/images/js-game-hero.webp"],
+  tech: [
+    "Physics",
+    "p5.js"
+  ],
+  categories: ["web development", "games"],
+  start_date: "December 2017",
+  end_date: "June 2022",
+  color: "#673ab7",
+  text_color: "#fff",
+  uid: "jsgame"
+};
+
+export default [mass_hike, poly_ml, hangman, synth_plant, acoustics, raisin, recipes, jsgame];
