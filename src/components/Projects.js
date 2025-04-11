@@ -36,7 +36,7 @@ const Project = styled(Link)`
   align-content: stretch;
   background-color: #fff;
   width: 220px;
-  height: 330px;
+  height: 320px;
   margin: 5px;
   text-align: center;
   box-shadow: 0px 1px 5px 1px rgba(0, 0, 0, 0.3);
@@ -62,20 +62,20 @@ class Projects extends Component {
   render() {
     const content = this.props.content;
     return (
-        <Wrapper id="projects">
-          <H1>my projects</H1>
-          <P>click to learn more</P>
-          <Showcase>
-            {content.projects.map((p, i) => (
-              <Project to={`/project/${i}`} key={i}>
-                {p.media[0] && <Img src={p.media[0]} />}
-                <Title>
-                  <b>{p.short_name}</b>
-                </Title>
-              </Project>
-            ))}
-          </Showcase>
-        </Wrapper>
+      <Wrapper id="projects">
+        <H1>my projects</H1>
+        <P>click to learn more</P>
+        <Showcase>
+          {content.projects.map((p, i) => (
+            <Project to={`/project/${p.uid}`} key={i}>
+              {p.media[0] && <Img src={p.media[0]} />}
+              <Title>
+                <b>{p.short_name}</b>
+              </Title>
+            </Project>
+          ))}
+        </Showcase>
+      </Wrapper>
     );
   }
 }

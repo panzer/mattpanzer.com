@@ -2,8 +2,7 @@ import React from "react";
 import { Route, Link, useParams } from "react-router-dom";
 import styled from "styled-components";
 import { H2, H4, P, A, ALink, MediaQueries } from "../style";
-import { HashLink } from 'react-router-hash-link';
-
+import { HashLink } from "react-router-hash-link";
 
 import content from "../data/content.js";
 
@@ -69,73 +68,76 @@ const Next = styled(ALink)`
 `;
 
 function ProjectDetail() {
-    window.scrollTo(0, 0);
-    const { i } = useParams();
-    const project_index = parseInt(i);
-    const project = content.projects[project_index];
-    const len = content.projects.length;
-    const prev_index = project_index - 1;
-    const prev_project = prev_index >= 0 ? content.projects[prev_index] : null;
-    const next_index = project_index + 1;
-    const next_project = next_index < len ? content.projects[next_index] : null;
-    const url = project.url.replace("https://", "");
-    const substring = url.indexOf("/") !== -1 ? url.indexOf("/") : url.length;
-    const imgIndex = project.media.length > 1 ? 1 : 0;
-    const datesText = project.start_date !== project.end_date ? `${project.start_date} -> ${project.end_date}` : project.end_date
-    return (
-          <Wrapper bg_color={project.color} txt_color={project.text_color}>
-            <Content>
-              <ALink
-                to={"/#projects"}
-              >
-                {`<- Back to my projects`}
-              </ALink>
-              <H2>{project.name}</H2>
+  window.scrollTo(0, 0);
+  const { i } = useParams();
+  const project_index = !isNaN(parseInt(i))
+    ? parseInt(i)
+    : content.projects.findIndex(({ uid }) => uid === i);
+  const project = content.projects[project_index];
+  const len = content.projects.length;
+  const prev_index = project_index - 1;
+  const prev_project = prev_index >= 0 ? content.projects[prev_index] : null;
+  const prev_slug = prev_project ? prev_project.uid : null;
+  const next_index = project_index + 1;
+  const next_project = next_index < len ? content.projects[next_index] : null;
+  const next_slug = next_project ? next_project.uid : null;
+  const url = project.url.replace("https://", "");
+  const substring = url.indexOf("/") !== -1 ? url.indexOf("/") : url.length;
+  const imgIndex = project.media.length > 1 ? 1 : 0;
+  const datesText =
+    project.start_date !== project.end_date
+      ? `${project.start_date} -> ${project.end_date}`
+      : project.end_date;
+  return (
+    <Wrapper bg_color={project.color} txt_color={project.text_color}>
+      <Content>
+        <ALink to={"/#projects"}>{`<- Back to my projects`}</ALink>
+        <H2>{project.name}</H2>
 
-              <P>
-                {datesText}
-                {project.url && ` | `}
-                <A href={project.url} target="_blank">
-                  {url.substring(0, substring)}
-                </A>
-              </P>
+        <P>
+          {datesText}
+          {project.url && ` | `}
+          <A href={project.url} target="_blank">
+            {url.substring(0, substring)}
+          </A>
+        </P>
 
-              {project.media[imgIndex] && (
-                <ImgSizer>
-                  <Img src={project.media[imgIndex]} />
-                </ImgSizer>
-              )}
+        {project.media[imgIndex] && (
+          <ImgSizer>
+            <Img src={project.media[imgIndex]} />
+          </ImgSizer>
+        )}
 
-              <div>
-                {project.description.map((section, i) => (
-                  <div key={i}>
-                    <H4>{section.header}</H4>
-                    {section.text
-                      .split("\n")
-                      .map((item, i) => <P key={i}>{item}</P>)}
-                  </div>
-                ))}
-              </div>
+        <div>
+          {project.description.map((section, i) => (
+            <div key={i}>
+              <H4>{section.header}</H4>
+              {section.text.split("\n").map((item, i) => (
+                <P key={i}>{item}</P>
+              ))}
+            </div>
+          ))}
+        </div>
 
-              <P>
-                <i>{project.tech.join(", ")}</i>
-              </P>
-            </Content>
-            <ButtonSpacer>
-              {prev_project && (
-                <Prev
-                  to={`/project/${prev_index}`}
-                >{`<- ${prev_project.short_name}`}</Prev>
-              )}
+        <P>
+          <i>{project.tech.join(", ")}</i>
+        </P>
+      </Content>
+      <ButtonSpacer>
+        {prev_project && (
+          <Prev
+            to={`/project/${prev_slug}`}
+          >{`<- ${prev_project.short_name}`}</Prev>
+        )}
 
-              {next_project && (
-                <Next
-                  to={`/project/${next_index}`}
-                >{`${next_project.short_name} ->`}</Next>
-              )}
-            </ButtonSpacer>
-          </Wrapper>
-    );
+        {next_project && (
+          <Next
+            to={`/project/${next_slug}`}
+          >{`${next_project.short_name} ->`}</Next>
+        )}
+      </ButtonSpacer>
+    </Wrapper>
+  );
 }
 
 export default ProjectDetail;

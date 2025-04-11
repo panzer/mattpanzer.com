@@ -1,7 +1,10 @@
 export default function sketch(p5) {
-  const size = 6;
+  const size = 16;
+  // padding must be equal or less than velocity to keep illusion of unbroken line
+  const padding = 2;
   const velMag = 2;
-  const perlinSpeed = 0.01;
+  const perlinSpeed = 0.005;
+  const backgroundColor = "#212121";
   let pos;
   let vel;
   let perlinIn = 0;
@@ -12,7 +15,7 @@ export default function sketch(p5) {
 
   function customCreateCanvas() {
     p5.createCanvas(customWidth, customHeight);
-    p5.background("#212121");
+    p5.background(backgroundColor);
     cX = customWidth / 2;
     cY = customHeight / 2;
   }
@@ -32,8 +35,14 @@ export default function sketch(p5) {
     let dy = p5.abs(pos.y - cY) / cY;
     let d = p5.max(dx, dy);
 
+    if (padding) {
+      p5.fill(backgroundColor);
+      p5.ellipse(pos.x, pos.y, size + padding, size + padding);
+    }
+
     let shade = p5.map(d, 0, 1, 13, 100); // #212121 has brightness of 13
     p5.fill(0, 0, shade);
+    p5.ellipse(pos.x - vel.x, pos.y - vel.y, size, size);
     p5.ellipse(pos.x, pos.y, size, size);
 
     let perlin = p5.noise(perlinIn);
@@ -44,16 +53,16 @@ export default function sketch(p5) {
 
     pos.add(vel);
 
-    if (pos.x < 0) {
+    if (pos.x < -size) {
       pos.x = customWidth;
     }
-    if (pos.x > customWidth) {
+    if (pos.x > customWidth + size) {
       pos.x = 0;
     }
-    if (pos.y < 0) {
+    if (pos.y < -size) {
       pos.y = customHeight;
     }
-    if (pos.y > customHeight) {
+    if (pos.y > customHeight + size) {
       pos.y = 0;
     }
   };

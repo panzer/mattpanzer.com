@@ -19,7 +19,7 @@ class Bio extends Component {
     return (
       <Wrapper id="about">
         <H1>the basics</H1>
-        <Item>
+        {/* <Item>
           <b>age: </b>
           {age} years
         </Item>
@@ -30,9 +30,9 @@ class Bio extends Component {
         <Item>
           <b>hometown: </b>
           {content.hometown}
-        </Item>
+        </Item> */}
         <Item>
-          <b>currently in: </b>
+          <b>based in: </b>
           {content.location}
         </Item>
         <Item>
@@ -40,11 +40,15 @@ class Bio extends Component {
           {content.occupation}
         </Item>
         <Item>
-          <b>education: </b>
-          {content.education.map(e => e.name).pop()}
+          <b>company: </b>
+          {content.work.map((e) => e.company).pop()}
         </Item>
         <Item>
-          <b>interests: </b>
+          <b>education: </b>
+          {content.education.map((e) => e.name).pop()}
+        </Item>
+        <Item>
+          <b>for fun: </b>
           {content.interests.join(", ")}
         </Item>
         <Item>

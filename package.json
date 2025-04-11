@@ -7,7 +7,6 @@
     "react-p5-wrapper": "3.3.0",
     "react-router-dom": "^6.3.0",
     "react-router-hash-link": "^2.4.3",
-    "react-scripts": "^5.0.0",
     "scroll-to-element": "^2.0.0",
     "styled-components": "^5.3.5"
   },
@@ -20,7 +19,8 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
-    "gh-pages": "^2.0.1"
+    "gh-pages": "^4.0.0",
+    "react-scripts": "^5.0.0"
   },
   "browserslist": {
     "production": [

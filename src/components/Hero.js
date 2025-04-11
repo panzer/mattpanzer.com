@@ -48,7 +48,7 @@ class Hero extends Component {
             <ReactP5Wrapper sketch={sketch} width={width} height={height} />
           </P5Positioner>
         )}
-        <H1>hi, I'm {content.nickname}.</H1>
+        <H1>hi, I'm {content.nickname} 👋🏻</H1>
         <P>scroll to learn more about me</P>
       </Wrapper>
     );
