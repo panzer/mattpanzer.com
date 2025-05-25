@@ -37,6 +37,21 @@ const P5Positioner = styled.div`
   z-index: -1;
 `;
 
+const WiggleSpan = styled.span`
+  display: inline-block;
+  transform-origin: bottom right;
+  animation: wiggle 1s infinite ease-in-out alternate;
+
+  @keyframes wiggle {
+    0% {
+      transform: rotate(2deg);
+    }
+    100% {
+      transform: rotate(-2deg);
+    }
+  }
+`;
+
 class Hero extends Component {
   render() {
     const { width, height, content } = this.props;
@@ -48,7 +63,9 @@ class Hero extends Component {
             <ReactP5Wrapper sketch={sketch} width={width} height={height} />
           </P5Positioner>
         )}
-        <H1>hi, I'm {content.nickname} 👋🏻</H1>
+        <H1>
+          hi, I'm {content.nickname} <WiggleSpan>👋🏻</WiggleSpan>
+        </H1>
         <P>scroll to learn more about me</P>
       </Wrapper>
     );

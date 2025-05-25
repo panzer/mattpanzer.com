@@ -1,0 +1,6 @@
+---
+description: 
+globs: *.ts,*.tsx
+alwaysApply: false
+---
+Using React Typescript with Material UI v6, always import from the component's module (like @mui/material/Button)
