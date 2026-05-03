@@ -2,8 +2,8 @@
   "name": "mattpanzer.com",
   "version": "0.1.0",
   "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react": "19.2.5",
+    "react-dom": "19.2.5",
     "react-p5-wrapper": "3.3.0",
     "react-router-dom": "^6.3.0",
     "react-router-hash-link": "^2.4.3",
